@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const dates = [
+  { d: 'Oct 5 – 18', k: 't1', what: 'Petition sprint', note: 'Lawyer on retainer. Residency and city-debt check. Statement of Economic Interests filed. 25+ circulators, 3 notaries, nightly notary nights. Target 170 raw signatures a day.' },
+  { d: 'Thu Oct 15', k: 't2', what: 'File-early decision', note: 'If 1,600+ validated signatures are in hand by Oct 18, be in line at 9 a.m. Oct 19 for the top-ballot-line lottery.' },
+  { d: 'Oct 19 – 26', k: 't3', what: 'Filing week', note: '203 S. State St. Bound, numbered sheets. Statement of Candidacy, SEI receipt, full photocopy. Deadline 5 p.m. Oct 26.' },
+  { d: 'Oct 26 – 31', k: 't4', what: 'Public launch', note: 'Saturday event in the ward, Spanish first. Exclusive to Block Club the night before, then La Raza, Univision, Telemundo.' },
+  { d: 'Oct 27 – Nov 2', k: 't5', what: 'Objection window', note: 'Expect a challenge from the ward organization. Records exam volunteers, rehab affidavits, legal reserve of $7.5K–$25K.' },
+  { d: 'Nov – Dec', k: 't6', what: 'House meetings and ID', note: 'Three house meetings a week. Voter-ID canvass in the strongest precincts. Call time 10 hrs/week. Endorsement questionnaires.' },
+  { d: 'Thu Dec 17', k: 't7', what: 'Ballot certified', note: 'Year-end push: the Q4 report due Jan 15 is how the press reads viability.' },
+  { d: 'Thu Jan 14', k: 't8', what: 'Mail ballots out, early voting opens', note: 'VBM chase begins. Mail piece 1 (bio). Candidate forums. Spanish radio starts Jan 18.' },
+  { d: 'Feb 15 – 23', k: 't9', what: 'GOTV', note: 'Four-day GOTV. Every identified supporter contacted three times. 19 precinct captains and poll watchers.' },
+  { d: 'Tue Feb 23', k: 't10', what: 'Election day', note: 'Goal: hold the organization candidate under 50% and finish second with about 2,000 votes.' },
+  { d: 'Feb 24 – Apr 6', k: 't11', what: 'Runoff', note: 'Contact eliminated campaigns within 48 hours. Re-canvass their voters. Goal: 3,500 votes on April 6.' },
+];
+---
+<Layout title="The Plan — Vanessa Tirado for 22nd Ward (Exploratory)" description="The operational plan: petitions, vote goals, budget, calendar, and the path to an April 6 runoff.">
+  <section class="hero dark noise">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="plan.eyebrow">The plan</span>
+      <h1 data-i18n="plan.h1">Small ward. Short clock. Clear math.</h1>
+      <p class="lede" data-i18n="plan.lede">The 22nd Ward cast fewer than 5,000 votes for alderperson in 2023, across just 19 precincts. That is the whole game: about 2,000 votes to make the runoff on February 23, about 3,500 to win it on April 6.</p>
+      <div class="grid grid--4 mt-3">
+        <div class="stat"><div class="num"><span data-count="4628">4,628</span></div><div class="label" data-i18n="plan.k1">aldermanic votes cast in 2023</div></div>
+        <div class="stat"><div class="num"><span data-count="19">19</span></div><div class="label" data-i18n="plan.k2">precincts in the ward</div></div>
+        <div class="stat"><div class="num"><span data-count="2000" data-prefix="~">~2,000</span></div><div class="label" data-i18n="plan.k3">votes to reach the runoff</div></div>
+        <div class="stat"><div class="num"><span data-count="3500" data-prefix="~">~3,500</span></div><div class="label" data-i18n="plan.k4">votes to win April 6</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="plan.cal_eyebrow">Calendar</span>
+      <h2 data-i18n="plan.cal_h">Working back from April 6.</h2>
+      <div class="split mt-2" style="align-items:start">
+        <ul class="timeline">
+          {dates.map((x) => (
+            <li>
+              <div class="when">{x.d}</div>
+              <div class="what" data-i18n={`plan.${x.k}_w`}>{x.what}</div>
+              <div class="note" data-i18n={`plan.${x.k}_n`}>{x.note}</div>
+            </li>
+          ))}
+        </ul>
+        <div>
+          <div class="card">
+            <span class="tag">Today</span>
+            <h3 data-i18n="plan.today_h">Where the clock stands</h3>
+            <table class="tbl">
+              <tr><td data-i18n="plan.c1">Petition deadline</td><td><strong data-days-until="2026-10-26">21</strong> <span data-i18n="plan.days">days</span></td></tr>
+              <tr><td data-i18n="plan.c2">Objection deadline</td><td><strong data-days-until="2026-11-02">28</strong> <span data-i18n="plan.days">days</span></td></tr>
+              <tr><td data-i18n="plan.c3">Ballot certification</td><td><strong data-days-until="2026-12-17">73</strong> <span data-i18n="plan.days">days</span></td></tr>
+              <tr><td data-i18n="plan.c4">Early voting opens</td><td><strong data-days-until="2027-01-14">101</strong> <span data-i18n="plan.days">days</span></td></tr>
+              <tr><td data-i18n="plan.c5">Election day</td><td><strong data-days-until="2027-02-23">141</strong> <span data-i18n="plan.days">days</span></td></tr>
+              <tr><td data-i18n="plan.c6">Runoff</td><td><strong data-days-until="2027-04-06">183</strong> <span data-i18n="plan.days">days</span></td></tr>
+            </table>
+          </div>
+          <div class="callout mt-2">
+            <strong data-i18n="plan.warn_h">The hard truth about October.</strong>
+            <p class="mb-0" data-i18n="plan.warn_p">Three weeks to collect about 2,200 raw signatures, with the ward organization's volunteers already circulating for its candidate and the Nov 3 general election soaking up every organizer in the city. The petition sprint is the campaign's first and hardest test.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sand">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="plan.field_eyebrow">Field</span>
+      <h2 data-i18n="plan.field_h">From votes to door knocks.</h2>
+      <div class="grid grid--2 mt-2">
+        <div class="card">
+          <h3 data-i18n="plan.math_h">The funnel to February 23</h3>
+          <table class="tbl">
+            <tr><th data-i18n="plan.m_step">Step</th><th data-i18n="plan.m_goal">Goal</th></tr>
+            <tr><td data-i18n="plan.m1">Votes needed</td><td>2,000</td></tr>
+            <tr><td data-i18n="plan.m2">Identified supporters (65% turn out with chase)</td><td>~3,100</td></tr>
+            <tr><td data-i18n="plan.m3">Conversations (40% support among persuadables)</td><td>~7,800</td></tr>
+            <tr><td data-i18n="plan.m4">Door knocks (25% contact rate)</td><td>~31,000</td></tr>
+            <tr><td data-i18n="plan.m5">Volunteer shifts (40 doors per 3-hour shift)</td><td>~775</td></tr>
+            <tr><td data-i18n="plan.m6">Core volunteers plus paid canvassers</td><td>40–60</td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <h3 data-i18n="plan.how_h">How the ward gets walked</h3>
+          <ul class="list">
+            <li data-i18n="plan.h1b">Spanish at the door by default. Bilingual literature on every piece.</li>
+            <li data-i18n="plan.h2">Walk voter-file lists only. Roughly a fifth to a third of residents are not citizens, and many households have no eligible voter.</li>
+            <li data-i18n="plan.h3">Non-citizen neighbors can volunteer in every role except circulating petitions, donating, and voting. Never ask anyone about status.</li>
+            <li data-i18n="plan.h4">Register 18-year-olds at the Little Village Lawndale campus and Farragut, and newly naturalized citizens. Same-day registration exists.</li>
+            <li data-i18n="plan.h5">Permanent vote-by-mail enrollment for seniors from November so they get both the February and April ballots automatically.</li>
+            <li data-i18n="plan.h6">Early voting at Toman Library, 2708 S. Pulaski (confirm for 2027). "Vota temprano" walks from house meetings.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="plan.money_eyebrow">Money</span>
+      <h2 data-i18n="plan.money_h">A cheap ward in dollars, an expensive one in hours.</h2>
+      <div class="grid grid--3 mt-2">
+        <div class="card"><div class="stat"><div class="num">$25K</div><div class="label" data-i18n="plan.b1">by Oct 26: fifty founding donors and one launch house party</div></div></div>
+        <div class="card"><div class="stat"><div class="num">$90K</div><div class="label" data-i18n="plan.b2">by Dec 31: call time, house parties, the year-end push that the press reads on Jan 15</div></div></div>
+        <div class="card"><div class="stat"><div class="num">$200–250K</div><div class="label" data-i18n="plan.b3">by Feb 23, plus $125–175K more for a runoff</div></div></div>
+      </div>
+      <div class="tbl-scroll mt-2">
+        <table class="tbl">
+          <tr><th data-i18n="plan.bl">Line</th><th data-i18n="plan.br1">First round</th><th data-i18n="plan.br2">Runoff</th></tr>
+          <tr><td data-i18n="plan.l1">Manager and field director</td><td>$45–70K</td><td>$25–35K</td></tr>
+          <tr><td data-i18n="plan.l2">Canvass stipends and organizers</td><td>$15–30K</td><td>$15–25K</td></tr>
+          <tr><td data-i18n="plan.l3">Mail (4–5 pieces to 9–11K households)</td><td>$25–45K</td><td>$20–35K</td></tr>
+          <tr><td data-i18n="plan.l4">Legal: petition defense and compliance</td><td>$10–30K</td><td>$3–5K</td></tr>
+          <tr><td data-i18n="plan.l5">Digital, Spanish-first creative</td><td>$10–25K</td><td>$10–20K</td></tr>
+          <tr><td data-i18n="plan.l6">Spanish radio and community media</td><td>$5–15K</td><td>$5–15K</td></tr>
+          <tr><td data-i18n="plan.l7">Literature, signs, voter file, events, compliance</td><td>$25–45K</td><td>$15–25K</td></tr>
+          <tr><td><strong data-i18n="plan.l8">Total</strong></td><td><strong>$140–275K</strong></td><td><strong>$95–160K</strong></td></tr>
+        </table>
+      </div>
+      <p class="foot mt-1" data-i18n="plan.money_foot">Illinois limits for 2025–26: $7,300 per individual, $14,600 per union or corporation, $72,800 per PAC. Limits lift for everyone if any candidate self-funds, or an outside group spends, over $100,000. No cash over $250. City contractors and lobbyists capped at $1,500. Foreign nationals may not contribute. Verify all of this with counsel.</p>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="plan.end_eyebrow">Endorsements</span>
+      <h2 data-i18n="plan.end_h">Who is locked, who is open.</h2>
+      <div class="grid grid--3 mt-2">
+        <div class="card">
+          <span class="tag tag--ink" style="background:#444" data-i18n="plan.e_locked">Likely locked for the organization</span>
+          <p class="mt-1 mb-0" data-i18n="plan.e_locked_p">SEIU locals and state council, AFSCME 31, Chicago Federation of Labor, Teamsters 700, Chuy García's organization, the Latino Caucus, United Working Families (leans), Mujeres Latinas en Acción (the organization candidate sits on its board).</p>
+        </div>
+        <div class="card">
+          <span class="tag tag--gold" data-i18n="plan.e_open">Open</span>
+          <p class="mt-1 mb-0" data-i18n="plan.e_open_p">Chicago Teachers Union, if Vanessa is a CPS clinician and member: member-to-member first. UNITE HERE Local 1. Teamsters locals with members along the Pulaski corridor. Illinois Nurses Association, Mijente, Better Streets, Urban Environmentalists via questionnaires.</p>
+        </div>
+        <div class="card">
+          <span class="tag tag--gold" data-i18n="plan.e_people">People</span>
+          <p class="mt-1 mb-0" data-i18n="plan.e_people_p">Ald. Julia Ramirez (12th): ask for advice before an endorsement; she is the model for this race. Ald. Byron Sigcho-Lopez (25th): keep warm privately, decide on a public tie only for the runoff. Kristian Armendariz: no attacks, a back channel for a mutual runoff endorsement.</p>
+        </div>
+      </div>
+      <p class="foot mt-2" data-i18n="plan.end_foot">Enlace, LVEJO, New Life Centers, Instituto del Progreso Latino, and The Resurrection Project are 501(c)(3)s and cannot endorse. Attend their forums; recruit their leaders only in a personal capacity.</p>
+    </div>
+  </section>
+
+  <section class="section sand">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="plan.guard_eyebrow">Guardrails</span>
+      <h2 data-i18n="plan.guard_h">Before anything goes public.</h2>
+      <div class="grid grid--2 mt-2">
+        <ul class="list card">
+          <li data-i18n="plan.g1">Confirm the title. LSP's site lists Vanessa as "Director" in one place and "Co-Founder & Director" in another. Use one board-approved title everywhere.</li>
+          <li data-i18n="plan.g2">Confirm her address is inside the post-2022 22nd Ward boundary and has been since at least Feb 23, 2026. Eastern Little Village sits in the 25th, 24th, and 12th.</li>
+          <li data-i18n="plan.g3">Run the city debt check (water, tickets, fines) before filing. It is the most common way candidates get removed.</li>
+          <li data-i18n="plan.g4">Confirm her employer. If CPS, follow the ethics policy strictly and lean into CTU membership.</li>
+        </ul>
+        <ul class="list card">
+          <li data-i18n="plan.g5">Latina Sweat Project is a 501(c)(3). Vanessa takes a documented leave from its board. No LSP space, lists, staff time, accounts, or logos for the campaign. Bio references only.</li>
+          <li data-i18n="plan.g6">Every number on this site must be verified and attributed before public use. Pick one defined figure per claim.</li>
+          <li data-i18n="plan.g7">Audit personal social media back to 2015 before launch.</li>
+          <li data-i18n="plan.g8">Write a one-line position on the issues an opponent will raise, including immigration enforcement and LSP's past solidarity actions, before launch.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero { position: relative; padding: clamp(56px, 8vw, 100px) 0; }
+  .list { padding-left: 1.2em; display: grid; gap: 10px; margin: 0; }
+  .list.card { padding-left: calc(clamp(22px, 3vw, 34px) + 1.2em); }
+</style>

@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const precincts = [
+  [1,160,74.4,11.3,14.4],[2,98,74.5,8.2,17.3],[3,276,63.0,13.8,23.2],[4,152,65.8,15.8,18.4],[5,376,65.4,13.6,21.0],[6,186,53.2,16.1,30.6],[7,228,64.0,12.3,23.7],[8,233,57.9,16.7,25.3],[9,240,65.4,9.2,25.4],[10,290,76.6,9.0,14.5],[11,374,70.1,14.2,15.8],[12,209,68.9,11.5,19.6],[13,302,68.9,15.9,15.2],[14,269,72.5,13.0,14.5],[15,160,67.5,13.8,18.8],[16,303,68.3,17.8,13.9],[17,113,63.7,20.4,15.9],[18,249,64.7,22.9,12.4],[19,410,59.0,30.2,10.7],
+];
+const zones = [
+  { z: 'A', p: '1–2', key: 'zA', area: 'Cermak edge, Central Park to Kostner', org: '74%', anti: '26%', vote: 60, share: '20%' },
+  { z: 'B', p: '3–6', key: 'zB', area: 'North Little Village, Cermak to 25th', org: '63%', anti: '37%', vote: 419, share: '36%' },
+  { z: 'C', p: '7–9, 11–14', key: 'zC', area: 'Little Village core and the 26th Street corridor', org: '67%', anti: '33%', vote: 715, share: '33%' },
+  { z: 'D', p: '10, 15', key: 'zD', area: 'South Little Village: Piotrowski, LVLHS, the Crawford site', org: '73%', anti: '27%', vote: 147, share: '28%' },
+  { z: 'E', p: '17–18', key: 'zE', area: 'Cicero corridor, 40th to 45th (Black-majority vote)', org: '64%', anti: '36%', vote: 126, share: '30%' },
+  { z: 'F', p: '16, 19', key: 'zF', area: 'Cicero corridor homeowner blocks, 37th to 48th', org: '63%', anti: '37%', vote: 363, share: '44%' },
+];
+---
+<Layout title="The Race — 22nd Ward 2027 (Exploratory)" description="How the 2027 22nd Ward race actually works: 19 precincts, under 5,000 votes, an organization successor, and a narrow path to an April 6 runoff.">
+  <section class="hero dark noise">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="race.eyebrow">The race</span>
+      <h1 data-i18n="race.h1">A narrow path. A real one.</h1>
+      <p class="lede" data-i18n="race.lede">Internal analysis of the 2027 22nd Ward race from precinct-level Board of Elections results, campaign finance filings, and press coverage. Every projection is an estimate and is labeled as one.</p>
+      <div class="grid grid--4 mt-3">
+        <div class="stat"><div class="num"><span data-count="19300" data-prefix="~">~19,300</span></div><div class="label" data-i18n="race.k1">registered voters</div></div>
+        <div class="stat"><div class="num">24%</div><div class="label" data-i18n="race.k2">2023 turnout, vs. 36% citywide</div></div>
+        <div class="stat"><div class="num">66%</div><div class="label" data-i18n="race.k3">organization share in 2023, with challengers who had almost no money</div></div>
+        <div class="stat"><div class="num">1 in 3</div><div class="label" data-i18n="race.k4">rough odds of forcing a runoff, with $150–250K raised</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="race.field_eyebrow">The field</span>
+      <h2 data-i18n="race.field_h">Three lanes.</h2>
+      <div class="grid grid--3 mt-2">
+        <div class="card">
+          <span class="tag tag--ink" data-i18n="race.c1_tag">Organization successor</span>
+          <h3>Elianne "Ely" Bahena</h3>
+          <p data-i18n="race.c1_p">Chief of staff to Ald. Rodriguez since 2023, elected 10th District police councilor in 2023 with about half of ward voters marking her name. Announced Sept 10, the day after the incumbent stepped aside, with Chuy García, Commissioner Alma Anaya, and Rodriguez behind her. Detained for seven hours by Border Patrol in Oct 2025 while documenting a raid. Would be the ward's first woman alderperson. Inherits a network whose committee held $222,211 in June 2026.</p>
+          <p class="foot mb-0" data-i18n="race.c1_f">Strengths: courage story, name recognition, labor and García network. Opening: the handoff itself, a staffer's record on 26th Street and taxes, never on the ballot in precincts 16–19.</p>
+        </div>
+        <div class="card">
+          <span class="tag" data-i18n="race.c2_tag">Grassroots challenger</span>
+          <h3>Kristian Armendariz</h3>
+          <p data-i18n="race.c2_p">Youth and community organizer, Little Village Community Council circle. Took 18% in 2023 with about $1,700 on hand, strongest in north and central Little Village. Running again.</p>
+          <p class="foot mb-0" data-i18n="race.c2_f">A rival in February and an asset: his 15–18% is what keeps the organization under 50%. A runoff ally if he is treated with respect now.</p>
+        </div>
+        <div class="card" style="border-color:var(--rose)">
+          <span class="tag tag--gold" data-i18n="race.c3_tag">Builder</span>
+          <h3>Vanessa Tirado</h3>
+          <p data-i18n="race.c3_p">Little Village social worker, co-founder and director of a community wellness nonprofit. No ballot history, no committee yet, and a distinct lane nobody else owns: health, small-business recovery, and an open ward office.</p>
+          <p class="foot mb-0" data-i18n="race.c3_f">Base to build: Cicero corridor homeowners, 26th Street business owners, women 25–50 and parents who skipped 2023.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sand">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="race.map_eyebrow">The map</span>
+      <h2 data-i18n="race.map_h">Two different protest votes.</h2>
+      <p class="lede" data-i18n="race.map_lede">In 2023 the anti-organization vote split in two: a youth and organizer vote in north-central Little Village, and a pragmatic homeowner vote on the Cicero corridor that went two-to-one for Vallas in the mayoral runoff. The corridor has the highest turnout in the ward and the weakest loyalty to the organization. That is where a builder's message lands first.</p>
+      <div class="tbl-scroll mt-2">
+        <table class="tbl">
+          <tr><th data-i18n="race.t_zone">Zone</th><th data-i18n="race.t_pct">Precincts</th><th data-i18n="race.t_area">Area</th><th data-i18n="race.t_org">Org 2023</th><th data-i18n="race.t_anti">Anti-org 2023</th><th data-i18n="race.t_target">Vanessa target (mid case)</th></tr>
+          {zones.map((z) => <tr><td><strong>{z.z}</strong></td><td>{z.p}</td><td data-i18n={`race.${z.key}`}>{z.area}</td><td>{z.org}</td><td>{z.anti}</td><td><strong>{z.vote}</strong> · {z.share}</td></tr>)}
+          <tr><td colspan="5"><strong data-i18n="race.t_total">Total target to force a runoff (5,400-vote case)</strong></td><td><strong>1,830 · 34%</strong></td></tr>
+        </table>
+      </div>
+      <details class="mt-2">
+        <summary data-i18n="race.pct_sum">Precinct-by-precinct, 2023 aldermanic</summary>
+        <div class="tbl-scroll mt-1">
+          <table class="tbl">
+            <tr><th>Pct</th><th data-i18n="race.t_votes">Votes</th><th>Rodriguez</th><th>Gonzalez</th><th>Armendariz</th></tr>
+            {precincts.map((r) => <tr><td>{r[0]}</td><td>{r[1]}</td><td>{r[2]}%</td><td>{r[3]}%</td><td>{r[4]}%</td></tr>)}
+            <tr><td><strong>All</strong></td><td><strong>4,628</strong></td><td><strong>66.3%</strong></td><td><strong>15.6%</strong></td><td><strong>18.0%</strong></td></tr>
+          </table>
+        </div>
+        <p class="foot mt-1" data-i18n="race.pct_foot">Source: Chicago Board of Election Commissioners, Feb 28, 2023 municipal election. Precinct boundaries unchanged for 2027.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow" data-i18n="race.path_eyebrow">The path</span>
+        <h2 data-i18n="race.path_h">Three things have to happen.</h2>
+        <ol class="path">
+          <li data-i18n="race.pa1">Raise $150,000 to $250,000. Nobody has ever tested this ward with a funded, credible challenger. Both prior challengers had under $2,000.</li>
+          <li data-i18n="race.pa2">Armendariz stays in and holds 15 to 18 percent. Do not fight him for precincts 6 through 9. Concentrate on zones F, E, B, and 26th Street business owners.</li>
+          <li data-i18n="race.pa3">Grow the electorate by 400 to 600 voters who are registered but skipped 2023: women, parents, fitness and school networks Vanessa reaches personally. Each new voter is worth about two points off the organization's share.</li>
+        </ol>
+        <div class="callout mt-2">
+          <strong data-i18n="race.runoff_h">April 6 math</strong>
+          <p class="mb-0" data-i18n="race.runoff_p">Win number: about 2,300 to 2,800. Vanessa's February 1,830 at 90% retention is about 1,650. Armendariz's 920 at 65% transfer with his endorsement is about 600. The last 450 to 550 come from Cicero-corridor homeowners who sat out February and from voters whose mayoral candidate lost. Pre-negotiate the runoff endorsement now, privately.</p>
+        </div>
+      </div>
+      <div class="card dark" style="background:var(--ink)">
+        <h3 data-i18n="race.issues_h">The issue landscape</h3>
+        <ul class="issues">
+          <li><strong data-i18n="race.i1_h">The raids and the recovery.</strong> <span data-i18n="race.i1_p">The 2025 federal operation defines the race. The organization owns the defense story; the opening is the second year of the crisis: 26th Street sales down 40–70%, families preparing to leave.</span></li>
+          <li><strong data-i18n="race.i2_h">Property taxes.</strong> <span data-i18n="race.i2_p">Record reassessment hikes hurt most on the homeowner precincts. The ward committee took about $49,500 from the Assessor's campaign and from him personally in 2026.</span></li>
+          <li><strong data-i18n="race.i3_h">The mayor.</strong> <span data-i18n="race.i3_p">Johnson sits near 23% approval and the incumbent is one of his closest allies. Independence from every mayoral camp is an asset. The ward voted no on Bring Chicago Home.</span></li>
+          <li><strong data-i18n="race.i4_h">Health.</strong> <span data-i18n="race.i4_p">Majority adult obesity, half of children, half of households food-insecure, every Save-A-Lot closed. Nobody owns this issue.</span></li>
+          <li><strong data-i18n="race.i5_h">Boundaries.</strong> <span data-i18n="race.i5_p">The Discount Mall, La Villita Park, the county jail, and the 10th District station are in the 25th and 24th wards, not the 22nd. The ward spans the 10th and 8th police districts.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="race.lessons_eyebrow">Lessons from comparable races</span>
+      <h2 data-i18n="race.lessons_h">What worked, what didn't.</h2>
+      <div class="grid grid--3 mt-2">
+        <div class="card"><h3 data-i18n="race.le1_h">Julia Ramirez, 12th Ward, 2023</h3><p class="mb-0" data-i18n="race.le1_p">Beat an appointed incumbent next door with SEIU money, a community-driven zoning pledge, and organizing through Instituto and Latinos Progresando. The closest model for this race. Ask for advice before an endorsement.</p></div>
+        <div class="card"><h3 data-i18n="race.le2_h">Byron Sigcho-Lopez, 25th Ward, 2019</h3><p class="mb-0" data-i18n="race.le2_p">Won an open seat on tenant and anti-displacement organizing and a no-developer-money pledge. Shares the 26th Street corridor, Crawford, vendors, and health clinics with the 22nd. Polarizing; decide on a public tie only for the runoff.</p></div>
+        <div class="card"><h3 data-i18n="race.le3_h">The 22nd's own outsiders, 2019 and 2023</h3><p class="mb-0" data-i18n="race.le3_p">"Machine" messaging alone got 9–14% in 2019 and 16–18% in 2023, with no money. The contrast must be builder versus successor, on substance, funded, with a lane nobody else owns.</p></div>
+      </div>
+      <p class="foot mt-2" data-i18n="race.foot">Full memo with sources: docs/research/01-race-dynamics.md in the project repository. Unverified items include the incumbent's December 2025 budget vote, whether participatory budgeting continued after 2015, and the exact ward edges near Cicero and Cermak.</p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero { position: relative; padding: clamp(56px, 8vw, 100px) 0; }
+  .path { padding-left: 1.4em; display: grid; gap: 12px; margin: 0; font-size: 1.05rem; }
+  .path li::marker { font-family: var(--font-display); font-weight: 800; color: var(--rose); }
+  .issues { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; color: rgba(255,255,255,.82); }
+  .issues strong { color: var(--gold); }
+  details summary { cursor: pointer; font-family: var(--font-display); font-weight: 700; }
+</style>

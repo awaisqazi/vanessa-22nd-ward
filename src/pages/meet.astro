@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Layout title="Meet Vanessa Tirado — 22nd Ward (Exploratory)" description="Vanessa Tirado: Little Village born and raised, licensed school social worker, UIC MSW, co-founder and director of the Latina Sweat Project.">
+  <section class="hero dark noise">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow" data-i18n="meet.eyebrow">Meet Vanessa</span>
+        <h1 data-i18n="meet.h1">A Little Village daughter who never left.</h1>
+        <p class="lede" data-i18n="meet.lede">Born and raised in La Villita, and still living here. A licensed school social worker with more than a decade of work with Chicago youth and families, and a builder who helped turn pop-up yoga classes in Little Village into a citywide wellness movement.</p>
+        <div class="row mt-2">
+          <span class="tag tag--gold">Little Village</span>
+          <span class="tag tag--gold">MSW, UIC</span>
+          <span class="tag tag--gold" data-i18n="meet.tag_ssw">School social worker</span>
+          <span class="tag tag--gold" data-i18n="meet.tag_lsp">Latina Sweat Project</span>
+        </div>
+      </div>
+      <div class="photo photo--square">
+        <img src={`${base}/images/lsp/vanessa/vanessa-headshot-navy.jpg`} alt="Vanessa Tirado" width="600" height="600" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="split split--rev">
+        <div class="photo">
+          <img src={`${base}/images/lsp/vanessa/vanessa-graduation-2026-mic.jpg`} alt="Vanessa Tirado speaking at the Latina Sweat Project teacher-training graduation, August 2026" loading="lazy" />
+          <span class="cap" data-i18n="meet.cap1">YTT Graduation, Aug 2026</span>
+        </div>
+        <div>
+          <span class="eyebrow" data-i18n="meet.story_eyebrow">Her story</span>
+          <h2 data-i18n="meet.story_h">Social worker first. Organizer by necessity.</h2>
+          <p data-i18n="meet.story_p1">Vanessa grew up in Little Village and earned her Master of Social Work at the University of Illinois Chicago. For more than ten years she has worked as a licensed school social worker, sitting across the table from kids and parents in crisis, navigating CPS, hospitals, and the systems that too often fail families on the Southwest Side.</p>
+          <p data-i18n="meet.story_p2">In 2022 she and a small group of Latinas started pop-up yoga classes in Little Village parks and mutual aid sessions inside migrant shelters. No grant, no building, no permission. That became the Latina Sweat Project: a nonprofit that has delivered thousands of free and discounted classes, trained nearly one hundred neighbors as certified teachers on full scholarships, and put food, clothing, and school supplies in the hands of families across the Southwest Side.</p>
+          <p data-i18n="meet.story_p3">She has chaired the organization's Culture and Ethics board, co-chaired its annual gala, and spent her weekends on the floor of a studio with a hundred neighbors on mats. She knows what it takes to build something in this community, and what it feels like when a landlord decides it's over: in fall 2026 the organization was displaced from its first studio and is rebuilding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sand">
+    <div class="wrap">
+      <span class="eyebrow" data-i18n="meet.receipts_eyebrow">Receipts, not adjectives</span>
+      <h2 data-i18n="meet.receipts_h">What she has already built with neighbors</h2>
+      <p class="lede" data-i18n="meet.receipts_lede">Figures below are from the Latina Sweat Project's own public reporting and are shown as the organization's work. Each one is marked for verification before public use.</p>
+      <div class="grid grid--4 mt-2">
+        <div class="card animate-in"><div class="stat"><div class="num"><span data-count="100" data-suffix="+">100+</span></div><div class="label" data-i18n="meet.s1">free community events she helped lead</div></div></div>
+        <div class="card animate-in d1"><div class="stat"><div class="num"><span data-count="5000" data-suffix="+">5,000+</span></div><div class="label" data-i18n="meet.s2">free or discounted classes funded by community campaigns</div></div></div>
+        <div class="card animate-in d2"><div class="stat"><div class="num"><span data-count="100" data-prefix="~">~100</span></div><div class="label" data-i18n="meet.s3">neighbors certified as yoga teachers, tuition-free</div></div></div>
+        <div class="card animate-in d3"><div class="stat"><div class="num"><span data-count="27000" data-prefix="$" data-suffix="+">$27,000+</span></div><div class="label" data-i18n="meet.s4">in mutual aid and nonprofit support</div></div></div>
+        <div class="card animate-in"><div class="stat"><div class="num"><span data-count="1000" data-suffix="+">1,000+</span></div><div class="label" data-i18n="meet.s5">warm meals distributed in 2025</div></div></div>
+        <div class="card animate-in d1"><div class="stat"><div class="num"><span data-count="2500">2,500</span></div><div class="label" data-i18n="meet.s6">back-to-school items for local kids in 2025</div></div></div>
+        <div class="card animate-in d2"><div class="stat"><div class="num"><span data-count="7500" data-suffix="+">7,500+</span></div><div class="label" data-i18n="meet.s7">articles of clothing donated in 2025</div></div></div>
+        <div class="card animate-in d3"><div class="stat"><div class="num"><span data-count="50" data-suffix="+">50+</span></div><div class="label" data-i18n="meet.s8">Black and Brown instructors hired or amplified</div></div></div>
+      </div>
+      <p class="foot mt-2" data-i18n="meet.receipts_foot">Source: latinasweatproject.com impact and about pages, Oct 2026. Verify each figure with LSP before it appears in any public material. LSP is a 501(c)(3) and does not endorse candidates.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow" data-i18n="meet.why_eyebrow">Why run</span>
+        <h2 data-i18n="meet.why_h">The ward office should work like the best community organizations already do.</h2>
+        <p data-i18n="meet.why_p1">Every week a social worker in Little Village watches a kid lose a semester to an asthma attack, a mother skip a doctor's visit because of fear on the street, a family of six squeezed into a two-flat they can no longer afford. The answers are not mysterious. They are organized. They just are not happening at the scale a ward office could make them happen.</p>
+        <p data-i18n="meet.why_p2">Vanessa's case is simple: she has spent her career inside the systems that touch families here, and she has already built an institution from nothing with neighbors. The ward deserves someone who has done both.</p>
+        <a class="btn btn--rose mt-1" href={`${base}/platform/`} data-i18n="meet.why_cta">Read the platform</a>
+      </div>
+      <div class="photo photo--wide">
+        <img src={`${base}/images/lsp/community/studio-packed-class.jpg`} alt="A packed community class at the Latina Sweat Project studio" loading="lazy" />
+        <span class="cap" data-i18n="meet.cap2">A Saturday at the studio</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight dark">
+    <div class="wrap">
+      <div class="grid grid--3">
+        <div>
+          <h3 data-i18n="meet.f1_h">Roots</h3>
+          <p class="muted" data-i18n="meet.f1_p">Proud Mexican-American, raised in Little Village, lives in Little Village. Registered yoga instructor (Yoga Sculpt, Power Yoga).</p>
+        </div>
+        <div>
+          <h3 data-i18n="meet.f2_h">Training</h3>
+          <p class="muted" data-i18n="meet.f2_p">Master of Social Work, University of Illinois Chicago. Licensed school social worker, trauma-informed care, 10+ years citywide.</p>
+        </div>
+        <div>
+          <h3 data-i18n="meet.f3_h">Leadership</h3>
+          <p class="muted" data-i18n="meet.f3_p">Co-founder and director, Latina Sweat Project. Chair, Culture and Ethics board. Gala co-chair. Featured voice, 2026 gala at the MCA.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero { position: relative; padding: clamp(56px, 8vw, 110px) 0; overflow: hidden; }
+  .hero .photo { max-width: 440px; margin-inline: auto; }
+</style>
